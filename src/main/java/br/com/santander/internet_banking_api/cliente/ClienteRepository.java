@@ -1,4 +1,6 @@
 package br.com.santander.internet_banking_api.cliente;
 
-public interface ClienteRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 }
