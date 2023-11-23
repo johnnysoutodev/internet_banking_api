@@ -5,7 +5,7 @@ import java.util.Date;
 
 public record DadosCadastroCliente(
         String nome,
-        Date dataDeNascimento,
+        String dataDeNascimento,
         Conta conta
 ) {
 }
