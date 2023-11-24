@@ -14,4 +14,9 @@ public class FormatadorDeData {
     public static LocalDate converterStringParaData(String strData) {
         return LocalDate.parse(strData, FORMATO_BRASILEIRO);
     }
+
+    public static String formatarData(LocalDate data) {
+        return data.format(FORMATO_BRASILEIRO);
+    }
+
 }
