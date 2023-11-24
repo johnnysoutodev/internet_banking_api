@@ -1,4 +1,4 @@
-INSERT INTO CLIENTES (nome, data_de_nascimento, numero_da_conta, plano_exclusive, saldo) VALUES ('João' , '8/7/2018', 100001, 1, 910.79);
+INSERT INTO CLIENTES (nome, data_de_nascimento, numero_da_conta, plano_exclusive, saldo) VALUES ('João' , '08/07/2018', 100001, 1, 910.79);
 INSERT INTO CLIENTES (nome, data_de_nascimento, numero_da_conta, plano_exclusive, saldo) VALUES ('Johnny' , '03/5/1982', 100002, 0, 570.00);
 INSERT INTO CLIENTES (nome, data_de_nascimento, numero_da_conta, plano_exclusive, saldo) VALUES ('Silmara' , '10/08/1981', 100003, 1, 1500.00);
 INSERT INTO CLIENTES (nome, data_de_nascimento, numero_da_conta, plano_exclusive, saldo) VALUES ('Maria' , '31/03/2000', 100004, 0, 1320.00);
