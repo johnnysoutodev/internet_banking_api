@@ -15,4 +15,10 @@ public class Conta {
     private String numero_da_conta;
     private Boolean plano_exclusive;
     private BigDecimal saldo;
+
+    public Conta(DadosConta dados) {
+        this.numero_da_conta = dados.numero_da_conta();
+        this.plano_exclusive = dados.plano_exclusive();
+        this.saldo = dados.saldo();
+    }
 }
