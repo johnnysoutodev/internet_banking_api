@@ -9,7 +9,7 @@ public class FormatadorDeData {
     private String strData;
 
     private static final DateTimeFormatter FORMATO_BRASILEIRO =
-            DateTimeFormatter.ofPattern("dd/MM/yyyy", new Locale("pt", "BR"));
+            DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm:ss", new Locale("pt", "BR"));
 
     public static LocalDate converterStringParaData(String strData) {
         return LocalDate.parse(strData, FORMATO_BRASILEIRO);
