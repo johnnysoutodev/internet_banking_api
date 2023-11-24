@@ -24,7 +24,7 @@ public class ClienteController {
 
     @GetMapping
     public Page<DadosListagemCliente> listar(Pageable paginacao){
-        return repository.findAll(paginacao).map(DadosListagemCliente::new);
+        return repository.findAllByAtivoTrue(paginacao).map(DadosListagemCliente::new);
     }
 
     @PutMapping
@@ -37,6 +37,7 @@ public class ClienteController {
     @DeleteMapping("/{id}")
     @Transactional
     public void excluir(@PathVariable Long id){
-        repository.deleteById(id);
+        var cliente = repository.getReferenceById(id);
+        cliente.excluir();
     }
 }
