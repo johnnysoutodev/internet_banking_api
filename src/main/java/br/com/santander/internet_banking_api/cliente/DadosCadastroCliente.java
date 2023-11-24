@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 public record DadosCadastroCliente(
         String nome,
         String dataDeNascimento,
-        String numeroDaConta,
+        int numeroDaConta,
         Boolean planoExclusive,
         BigDecimal saldo
 ) {
