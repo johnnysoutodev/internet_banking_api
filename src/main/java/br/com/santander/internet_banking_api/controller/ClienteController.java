@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("clientes")
 public class ClienteController {
@@ -23,6 +25,6 @@ public class ClienteController {
 
     @GetMapping
     public List<DadosListagemCliente> listar(){
-        return repository.findAll();
+        return repository.findAll().stream().map(DadosListagemCliente::new).toList();
     }
 }
