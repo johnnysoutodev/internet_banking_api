@@ -21,4 +21,16 @@ public class Conta {
         this.plano_exclusive = dados.plano_exclusive();
         this.saldo = dados.saldo();
     }
+
+    public void atualizaInformacoes(DadosConta dados) {
+        if (dados.numero_da_conta() != null) {
+            this.numero_da_conta = dados.numero_da_conta();
+        }
+        if (dados.plano_exclusive() != null) {
+            this.plano_exclusive = dados.plano_exclusive();
+        }
+        if (dados.saldo() != null) {
+            this.saldo = dados.saldo();
+        }
+    }
 }
