@@ -1,11 +1,12 @@
 package br.com.santander.internet_banking_api.cliente;
 
-import br.com.santander.internet_banking_api.conta.Conta;
-import java.util.Date;
+import java.math.BigDecimal;
 
 public record DadosCadastroCliente(
         String nome,
         String dataDeNascimento,
-        Conta conta
+        String numeroDaConta,
+        Boolean planoExclusive,
+        BigDecimal saldo
 ) {
 }
