@@ -3,6 +3,7 @@ package br.com.santander.internet_banking_api.controller;
 import br.com.santander.internet_banking_api.cliente.Cliente;
 import br.com.santander.internet_banking_api.cliente.ClienteRepository;
 import br.com.santander.internet_banking_api.cliente.DadosCadastroCliente;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +19,7 @@ public class ClienteController {
 
     @PostMapping
     @Transactional
-    public void cadastrar(@RequestBody DadosCadastroCliente dados){
+    public void cadastrar(@RequestBody @Valid DadosCadastroCliente dados){
         repository.save(new Cliente(dados));
     }
 }
