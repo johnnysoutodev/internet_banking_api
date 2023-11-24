@@ -1,13 +1,12 @@
 package br.com.santander.internet_banking_api.cliente;
 
-import br.com.santander.internet_banking_api.conta.Conta;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
+import java.math.BigDecimal;
 
 @Table(name = "clientes")
 @Entity(name = "Cliente")
@@ -21,12 +20,15 @@ public class Cliente {
     private Long id;
     private String nome;
     private String dataDeNascimento;
-    @Embedded
-    private Conta conta;
+    private String numeroDaConta;
+    private Boolean planoExclusive;
+    private BigDecimal saldo;
 
     public Cliente(DadosCadastroCliente dados) {
         this.nome = dados.nome();
         this.dataDeNascimento = dados.dataDeNascimento();
-        this.conta = new Conta(dados.conta());
+        this.numeroDaConta = dados.numeroDaConta();
+        this.planoExclusive = dados.planoExclusive();
+        this.saldo = dados.saldo();
     }
 }
