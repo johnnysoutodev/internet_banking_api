@@ -2,6 +2,7 @@ package br.com.santander.internet_banking_api.cliente;
 
 import br.com.santander.internet_banking_api.conta.Conta;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -20,8 +21,11 @@ public class Cliente {
     private String data_de_nascimento;
     @Embedded
     Conta conta;
+    @NotNull
+    private Boolean ativo;
 
     public Cliente(DadosCadastroCliente dados) {
+        this.ativo = true;
         this.nome = dados.nome();
         this.data_de_nascimento = dados.data_de_nascimento();
         this.conta = new Conta(dados.conta());
@@ -37,5 +41,9 @@ public class Cliente {
         if (dados.conta() != null){
             this.conta.atualizaInformacoes(dados.conta());
         }
+    }
+
+    public void excluir() {
+        this.ativo = false;
     }
 }
