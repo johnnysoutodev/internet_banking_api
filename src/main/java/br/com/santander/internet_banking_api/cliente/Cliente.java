@@ -20,7 +20,7 @@ public class Cliente {
     private Long id;
     private String nome;
     private String dataDeNascimento;
-    private String numeroDaConta;
+    private int numeroDaConta;
     private Boolean planoExclusive;
     private BigDecimal saldo;
 
