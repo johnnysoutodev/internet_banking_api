@@ -1,9 +1,6 @@
 package br.com.santander.internet_banking_api.controller;
 
-import br.com.santander.internet_banking_api.cliente.Cliente;
-import br.com.santander.internet_banking_api.cliente.ClienteRepository;
-import br.com.santander.internet_banking_api.cliente.DadosCadastroCliente;
-import br.com.santander.internet_banking_api.cliente.DadosListagemCliente;
+import br.com.santander.internet_banking_api.cliente.*;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -28,5 +25,11 @@ public class ClienteController {
     @GetMapping
     public Page<DadosListagemCliente> listar(Pageable paginacao){
         return repository.findAll(paginacao).map(DadosListagemCliente::new);
+    }
+
+    @PutMapping
+    @Transactional
+    public void atualizar(@RequestBody @Valid DadosAtualizacaoCliente dados){
+
     }
 }
