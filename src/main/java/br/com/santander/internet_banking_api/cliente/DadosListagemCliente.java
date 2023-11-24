@@ -1,11 +1,12 @@
 package br.com.santander.internet_banking_api.cliente;
 
+import br.com.santander.internet_banking_api.conta.Conta;
+
 public record DadosListagemCliente(
         String nome,
-        String numero_da_conta,
-        Boolean plano_exclusive
+        String data_de_nascimento
 ) {
     public DadosListagemCliente(Cliente cliente){
-        this(cliente.getNome(), cliente.getNumero_da_conta(), cliente.getPlano_exclusive());
+        this(cliente.getNome(), cliente.getData_de_nascimento());
     }
 }
