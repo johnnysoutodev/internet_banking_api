@@ -33,4 +33,10 @@ public class ClienteController {
         var cliente = repository.getReferenceById(dados.id());
         cliente.atualizarInformacoes(dados);
     }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluir(@PathVariable Long id){
+        repository.deleteById(id);
+    }
 }
