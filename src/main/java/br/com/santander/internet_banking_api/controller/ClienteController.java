@@ -5,6 +5,7 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,7 +24,7 @@ public class ClienteController {
     }
 
     @GetMapping
-    public Page<DadosListagemCliente> listar(Pageable paginacao){
+    public Page<DadosListagemCliente> listar(@PageableDefault(size = 10, page = 0, sort = {"id"}) Pageable paginacao){
         return repository.findAllByAtivoTrue(paginacao).map(DadosListagemCliente::new);
     }
 
