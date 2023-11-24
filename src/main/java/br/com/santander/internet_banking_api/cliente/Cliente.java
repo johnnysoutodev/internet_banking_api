@@ -26,4 +26,16 @@ public class Cliente {
         this.data_de_nascimento = dados.data_de_nascimento();
         this.conta = new Conta(dados.conta());
     }
+
+    public void atualizarInformacoes(DadosAtualizacaoCliente dados) {
+        if (dados.nome() != null) {
+            this.nome = dados.nome();
+        }
+        if (dados.data_de_nascimento() != null){
+            this.data_de_nascimento = dados.data_de_nascimento();
+        }
+        if (dados.conta() != null){
+            this.conta.atualizaInformacoes(dados.conta());
+        }
+    }
 }
