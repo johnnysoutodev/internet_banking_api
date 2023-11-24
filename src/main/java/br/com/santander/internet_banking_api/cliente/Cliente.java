@@ -20,4 +20,10 @@ public class Cliente {
     private String data_de_nascimento;
     @Embedded
     Conta conta;
+
+    public Cliente(DadosCadastroCliente dados) {
+        this.nome = dados.nome();
+        this.data_de_nascimento = dados.data_de_nascimento();
+        this.conta = new Conta(dados.conta());
+    }
 }
