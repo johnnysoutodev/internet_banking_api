@@ -41,12 +41,4 @@ public class ClienteController {
         var cliente = repository.getReferenceById(id);
         cliente.excluir();
     }
-
-    @GetMapping("/{id}")
-    @Transactional
-    public ResponseEntity detalhar(@PathVariable Long id){
-        var cliente = repository.getReferenceById(id);
-
-        return ResponseEntity.ok(new DadosDetalhamentoCliente(cliente));
-    }
 }
