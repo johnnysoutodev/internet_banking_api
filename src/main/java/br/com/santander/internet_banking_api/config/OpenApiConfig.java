@@ -14,7 +14,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
                         url = "https://www.capgemini.com.br"
                 ),
                 description = "API referente ao teste da oportunidade de Desenvolvedor Back-End Pleno no Santander",
-                title = "Santander Banking API",
+                title = "Internet Banking API",
                 version = "1.0.0",
                 license = @License(
                         name = "License Apache 2.0",
