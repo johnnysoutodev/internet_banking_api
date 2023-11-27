@@ -1,6 +1,8 @@
 package br.com.santander.internet_banking_api.controller;
 
 import br.com.santander.internet_banking_api.domain.cliente.*;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -10,12 +12,17 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("clientes")
+@RequestMapping("/api/v1/cliente")
+@Tag(name = "Cliente")
 public class ClienteController {
     @Autowired
     private ClienteRepository repository;
 
-    @PostMapping
+    @Operation(
+            description = "Endpoint do tipo POST para cadastrar cliente.",
+            summary = "Cadastrar cliente."
+    )
+    @PostMapping("/cadastrar")
     @Transactional
     public void cadastrar(@RequestBody @Valid DadosCadastroCliente dados){
         repository.save(new Cliente(dados));
