@@ -11,7 +11,7 @@ import io.swagger.v3.oas.annotations.info.Info;
                         email = "johnny.souto@cagpgemini.com ",
                         url = "https://wwww.capgemini.com.br"
                 ),
-                
+                description = "Santander Banking API"
         )
 )
 public class OpenApiConfig {
