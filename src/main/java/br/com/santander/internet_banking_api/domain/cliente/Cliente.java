@@ -7,7 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.util.Date;
+import java.sql.Date;
 
 @Table(name = "clientes")
 @Entity(name = "Cliente")
@@ -19,7 +19,7 @@ public class Cliente {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
-    private Date data_de_nascimento;
+    private String data_de_nascimento;
     private String numero_da_conta;
     private Boolean plano_exclusive;
     private BigDecimal saldo;
