@@ -13,7 +13,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
                         email = "johnny.souto@cagpgemini.com ",
                         url = "https://www.capgemini.com.br"
                 ),
-                description = "API do teste para desenvolvedor Back-End do Santander",
+                description = "API referente ao teste da oportunidade de Desenvolvedor Back-End Pleno no Santander",
                 title = "Santander Banking API",
                 version = "1.0.0",
                 license = @License(
