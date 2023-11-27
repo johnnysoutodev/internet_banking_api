@@ -79,4 +79,5 @@ public class ClienteController {
     public List<DadosDetalhamentoCliente> detalhar(@PathVariable Long id) {
         return repository.findById(id).stream().map(DadosDetalhamentoCliente::new).toList();
     }
+
 }
