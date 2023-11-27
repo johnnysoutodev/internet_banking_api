@@ -18,7 +18,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
                 version = "1.0.0",
                 license = @License(
                         name = "Apache 2.0",
-                        url = "https://www.satander.com.br/license"
+                        url = "https://www.santander.com.br/license"
                 ),
                 termsOfService = "Terms of service"
         ),
