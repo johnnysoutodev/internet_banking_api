@@ -53,7 +53,7 @@ public class ClienteController {
     )
     @PutMapping("/atualizar")
     @Transactional
-//    @Hidden
+    @Hidden
     public void atualizar(@RequestBody @Valid DadosAtualizacaoCliente dados){
         var cliente = repository.getReferenceById(dados.id());
         cliente.atualizarInformacoes(dados);
@@ -65,7 +65,7 @@ public class ClienteController {
     )
     @DeleteMapping("/excluir/{id}")
     @Transactional
-//    @Hidden
+    @Hidden
     public void excluir(@PathVariable Long id){
         var cliente = repository.getReferenceById(id);
         cliente.excluir();
