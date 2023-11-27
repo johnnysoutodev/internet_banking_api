@@ -7,7 +7,7 @@ import jakarta.validation.constraints.Pattern;
 import java.math.BigDecimal;
 
 public record DadosConta(
-        @NotBlank
+        @NotNull
         @Pattern(regexp = "\\d{6}")
         String numero_da_conta,
         @NotNull
