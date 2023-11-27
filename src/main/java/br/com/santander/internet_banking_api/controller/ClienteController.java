@@ -1,6 +1,7 @@
 package br.com.santander.internet_banking_api.controller;
 
 import br.com.santander.internet_banking_api.domain.cliente.*;
+import io.swagger.v3.oas.annotations.Hidden;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
@@ -43,6 +44,7 @@ public class ClienteController {
     )
     @PutMapping("/atualizar")
     @Transactional
+//    @Hidden
     public void atualizar(@RequestBody @Valid DadosAtualizacaoCliente dados){
         var cliente = repository.getReferenceById(dados.id());
         cliente.atualizarInformacoes(dados);
@@ -54,6 +56,7 @@ public class ClienteController {
     )
     @DeleteMapping("/excluir/{id}")
     @Transactional
+//    @Hidden
     public void excluir(@PathVariable Long id){
         var cliente = repository.getReferenceById(id);
         cliente.excluir();
