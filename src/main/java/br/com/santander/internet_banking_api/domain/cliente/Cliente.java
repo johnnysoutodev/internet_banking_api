@@ -1,6 +1,6 @@
-package br.com.santander.internet_banking_api.cliente;
+package br.com.santander.internet_banking_api.domain.cliente;
 
-import br.com.santander.internet_banking_api.conta.Conta;
+import br.com.santander.internet_banking_api.domain.conta.Conta;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;

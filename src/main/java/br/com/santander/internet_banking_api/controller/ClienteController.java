@@ -1,6 +1,6 @@
 package br.com.santander.internet_banking_api.controller;
 
-import br.com.santander.internet_banking_api.cliente.*;
+import br.com.santander.internet_banking_api.domain.cliente.*;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -8,8 +8,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("clientes")

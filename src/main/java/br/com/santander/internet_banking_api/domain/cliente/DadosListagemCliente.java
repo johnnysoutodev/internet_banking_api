@@ -1,6 +1,4 @@
-package br.com.santander.internet_banking_api.cliente;
-
-import br.com.santander.internet_banking_api.conta.Conta;
+package br.com.santander.internet_banking_api.domain.cliente;
 
 public record DadosListagemCliente(
         Long id,

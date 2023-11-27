@@ -1,6 +1,6 @@
-package br.com.santander.internet_banking_api.cliente;
+package br.com.santander.internet_banking_api.domain.cliente;
 
-import br.com.santander.internet_banking_api.conta.DadosConta;
+import br.com.santander.internet_banking_api.domain.conta.DadosConta;
 import jakarta.validation.constraints.NotNull;
 
 public record DadosAtualizacaoCliente(

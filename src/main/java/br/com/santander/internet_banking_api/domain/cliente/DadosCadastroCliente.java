@@ -1,12 +1,10 @@
-package br.com.santander.internet_banking_api.cliente;
+package br.com.santander.internet_banking_api.domain.cliente;
 
-import br.com.santander.internet_banking_api.conta.DadosConta;
+import br.com.santander.internet_banking_api.domain.conta.DadosConta;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
-
-import java.math.BigDecimal;
 
 public record DadosCadastroCliente(
         @NotBlank

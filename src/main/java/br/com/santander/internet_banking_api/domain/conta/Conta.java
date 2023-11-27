@@ -1,4 +1,4 @@
-package br.com.santander.internet_banking_api.conta;
+package br.com.santander.internet_banking_api.domain.conta;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;

@@ -1,6 +1,4 @@
-package br.com.santander.internet_banking_api.cliente;
-
-import br.com.santander.internet_banking_api.conta.DadosConta;
+package br.com.santander.internet_banking_api.domain.cliente;
 
 public record DadosDetalhamentoCliente(Long id, String nome, String data_de_nascimento) {
 
