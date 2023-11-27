@@ -4,6 +4,7 @@ import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Contact;
 import io.swagger.v3.oas.annotations.info.Info;
 import io.swagger.v3.oas.annotations.info.License;
+import io.swagger.v3.oas.annotations.servers.Server;
 
 @OpenAPIDefinition(
         info = @Info(
@@ -20,7 +21,13 @@ import io.swagger.v3.oas.annotations.info.License;
                         url = "https://www.licensesite.com"
                 ),
                 termsOfService = "Terms of service"
-        )
+        ),
+        servers = {
+                @Server(
+                        description = "Local DEV",
+                        url = "http://localhost:8080"
+                )
+        }
 )
 public class OpenApiConfig {
 }
