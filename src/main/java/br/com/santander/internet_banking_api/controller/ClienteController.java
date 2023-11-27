@@ -28,19 +28,31 @@ public class ClienteController {
         repository.save(new Cliente(dados));
     }
 
-    @GetMapping
+    @Operation(
+            description = "Endpoint do tipo GET para listar todos os clientes.",
+            summary = "Lista todos os clientes."
+    )
+    @GetMapping("/listarTodos")
     public Page<DadosListagemCliente> listar(@PageableDefault(size = 10, page = 0, sort = {"id"}) Pageable paginacao){
         return repository.findAllByAtivoTrue(paginacao).map(DadosListagemCliente::new);
     }
 
-    @PutMapping
+    @Operation(
+            description = "Endpoint do tipo PUT para atualizar o cliente",
+            summary = "Atualiza o cliente."
+    )
+    @PutMapping("/atualizar")
     @Transactional
     public void atualizar(@RequestBody @Valid DadosAtualizacaoCliente dados){
         var cliente = repository.getReferenceById(dados.id());
         cliente.atualizarInformacoes(dados);
     }
 
-    @DeleteMapping("/{id}")
+    @Operation(
+            description = "Endpoint do tipo DELETE para excluir o cliente.",
+            summary = "Excluir cliente."
+    )
+    @DeleteMapping("/excluir/{id}")
     @Transactional
     public void excluir(@PathVariable Long id){
         var cliente = repository.getReferenceById(id);
