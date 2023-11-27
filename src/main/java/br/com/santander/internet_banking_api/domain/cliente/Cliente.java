@@ -1,12 +1,12 @@
 package br.com.santander.internet_banking_api.domain.cliente;
 
-import br.com.santander.internet_banking_api.domain.conta.Conta;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
+import java.math.BigDecimal;
 
 @Table(name = "clientes")
 @Entity(name = "Cliente")
@@ -19,16 +19,18 @@ public class Cliente {
     private Long id;
     private String nome;
     private String data_de_nascimento;
-    @Embedded
-    Conta conta;
-    @NotNull
+    private String numero_da_conta;
+    private Boolean plano_exclusive;
+    private BigDecimal saldo;
     private Boolean ativo;
 
     public Cliente(DadosCadastroCliente dados) {
         this.ativo = true;
         this.nome = dados.nome();
         this.data_de_nascimento = dados.data_de_nascimento();
-        this.conta = new Conta(dados.conta());
+        this.numero_da_conta = dados.numero_da_conta();
+        this.plano_exclusive = dados.plano_exclusive();
+        this.saldo = dados.saldo();
     }
 
     public void atualizarInformacoes(DadosAtualizacaoCliente dados) {
@@ -38,8 +40,14 @@ public class Cliente {
         if (dados.data_de_nascimento() != null){
             this.data_de_nascimento = dados.data_de_nascimento();
         }
-        if (dados.conta() != null){
-            this.conta.atualizaInformacoes(dados.conta());
+        if (dados.numero_da_conta() != null){
+            this.numero_da_conta = dados.numero_da_conta();
+        }
+        if (dados.plano_exclusive() != null){
+            this.plano_exclusive = dados.plano_exclusive();
+        }
+        if (dados.saldo() != null){
+            this.saldo = dados.saldo();
         }
     }
 
