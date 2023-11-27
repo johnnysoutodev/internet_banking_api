@@ -1,2 +1,2 @@
-alter table clientes add ativo tinyint not null;
+alter table clientes add ativo boolean ;
 update clientes set ativo = 1;
