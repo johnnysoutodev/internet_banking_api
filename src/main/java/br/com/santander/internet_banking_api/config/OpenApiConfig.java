@@ -9,9 +9,10 @@ import io.swagger.v3.oas.annotations.info.Info;
                 contact = @Contact(
                         name = "Johnny Souto",
                         email = "johnny.souto@cagpgemini.com ",
-                        url = "https://wwww.capgemini.com.br"
+                        url = "https://www.capgemini.com.br"
                 ),
-                description = "Santander Banking API"
+                description = "API do teste para desenvolvedor Back-End do Santander",
+                title = "Santander Banking API"
         )
 )
 public class OpenApiConfig {
