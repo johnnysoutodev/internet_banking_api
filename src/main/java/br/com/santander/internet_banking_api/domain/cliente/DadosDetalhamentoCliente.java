@@ -7,7 +7,7 @@ import java.util.Date;
 public record DadosDetalhamentoCliente(
         Long id,
         String nome,
-        Date data_de_nascimento,
+        String data_de_nascimento,
         String numero_da_conta,
         Boolean plano_exclusive,
         BigDecimal saldo) {
